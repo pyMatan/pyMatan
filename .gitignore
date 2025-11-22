@@ -1,0 +1,17 @@
+# Python Virtual Environments
+venv/
+.venv/
+env/
+
+# Build and Distribution files (згенеровано setup.py)
+build/
+dist/
+*.egg-info/
+pyMatan.egg-info/
+
+# PyCharm, VS Code або інші IDE файли
+.idea/
+*.pyc
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
