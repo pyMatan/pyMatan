@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+pyMatan/__init__.py
+pyMatan.egg-info/PKG-INFO
+pyMatan.egg-info/SOURCES.txt
+pyMatan.egg-info/dependency_links.txt
+pyMatan.egg-info/requires.txt
+pyMatan.egg-info/top_level.txt
+pyMatan/integrals/__init__.py
+pyMatan/limits_derivatives/__init__.py
+pyMatan/limits_derivatives/derivatives.py
+pyMatan/limits_derivatives/limits.py
+pyMatan/series/__init__.py
