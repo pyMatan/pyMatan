@@ -5,7 +5,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/bdist.linux-x86_64" />
       <excludeFolder url="file://$MODULE_DIR$/venv/include" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.13" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
