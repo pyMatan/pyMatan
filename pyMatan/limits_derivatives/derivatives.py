@@ -1,7 +1,6 @@
 from typing import Callable
 import sympy
-from typing import Union
-from ..utils  import parse_function
+from pyMatan.utils import parse_function
 import numpy as np
 import matplotlib.pyplot as plt
 
