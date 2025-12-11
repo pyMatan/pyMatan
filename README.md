@@ -93,27 +93,25 @@ print(f"Numerical limit of f(x) as x -> 0+ is: {limit_value}")
 Project Structure
 The project adheres to the standard Python package structure, ensuring clean separation of concerns and clear responsibilities for each module.
 
-pyMatan_project/
-├── pyMatan/
-│   ├── integrals/            # Student 1: Integration methods
-│   │   ├── __init__.py
-│   │   └── integrals.py
-│   ├── series/               # Student 2: Series analysis
-│   │   ├── __init__.py
-│   │   └── series.py
-│   ├── limits_derivatives/   # Student 3: Limits & Derivatives
-│   │   ├── __init__.py
-│   │   ├── limits.py
-│   │   └── derivatives.py
-│   ├── tests/                # Student 3: Unit tests
-│   │   └── test_pyMatan.py
-│   └── __init__.py
-├── setup.py                  # Package configuration
-├── testing
-|   ├──notebook_example.ipynb
-|   ├──test_pyMatan.py
-├── README.md
-└── LICENSE
+pyMatan_project/ <br>
+├── pyMatan/  <br>
+│   ├── integrals/ <br>           
+│   │   ├── __init__.py <br>
+│   │   └── integrals.py <br>
+│   ├── series/ <br>
+│   │   ├── __init__.py <br>
+│   │   └── series.py <br>
+│   ├── limits_derivatives/ <br>
+│   │   ├── __init__.py <br>
+│   │   ├── limits.py <br>
+│   │   └── derivatives.py <br>
+│   
+├── setup.py <br>              
+├── testing <br>
+|   ├──notebook_example.ipynb <br>
+|   ├──test_pyMatan.py <br>
+├── README.md <br>
+└── LICENSE<br>
 
 ## Contributors
 
