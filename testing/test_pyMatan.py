@@ -15,6 +15,18 @@ from pyMatan.limits_derivatives.limits import (
     symbolic_limit,
     visualize_limit
 )
+from pyMatan.series import (
+    d_alembert_test,
+    cauchy_root_test,
+    integral_test,
+    leibniz_test,
+    partial_sum,
+    taylor_polynomial,
+    taylor_remainder_lagrange,
+    fourier_coefficients,
+    fourier_partial_sum,
+    plot_taylor_approximations
+)
 
 def assert_close(actual, expected, tol=1e-5):
     """Checks if values are sufficiently close."""
@@ -202,3 +214,97 @@ visualize_limit("1/x", x0=0, h_window=0.5, h_approx=1e-6)
 
 
 print("\nvisualize_limit testing completed successfully. Check the generated plots above.")
+
+
+def a_geo(n):
+    return (1/2)**n
+
+def a_harmonic(n):
+    return 1/n
+
+def a_identity(n):
+    return n
+
+
+# --- TEST 1: D'Alembert Ratio Test ---
+# For geometric series a_n = (1/2)^n, ratio limit is L = 1/2.
+expected_ratio = 0.5
+ratio_result = d_alembert_test(a_geo, n_start=80, steps=80)
+# Moderate tolerance due to averaging
+assert_close(ratio_result, expected_ratio, tol=1e-2)
+print(f"Test 1 (D'Alembert): result = {ratio_result}, expected = {expected_ratio}")
+
+
+# --- TEST 2: Cauchy Root Test ---
+# For geometric series a_n = (1/2)^n, root limit is L = 1/2.
+expected_root = 0.5
+root_result = cauchy_root_test(a_geo, n_start=80, steps=80)
+# Same tolerance as ratio test
+assert_close(root_result, expected_root, tol=1e-2)
+print(f"Test 2 (Cauchy Root): result = {root_result}, expected = {expected_root}")
+
+
+# --- TEST 3: Integral Test ---
+# For ∫[1,∞] 1/x^2 dx, the exact value is 1.
+expected_int = 1.0
+int_result = integral_test("1/x**2", a=1, upper=300, n=20000)
+# Numerical integral requires moderate tolerance
+assert_close(int_result, expected_int, tol=1e-2)
+print(f"Test 3 (Integral Test): result = {int_result}, expected = {expected_int}")
+
+
+# --- TEST 4: Leibniz Alternating Test ---
+# For a_n = 1/n, the alternating series satisfies Leibniz conditions.
+leib_result = leibniz_test(a_harmonic)
+assert leib_result is True, "Error: Leibniz test should return True."
+print(f"Test 4 (Leibniz): result = {leib_result}")
+
+
+# --- TEST 5: Partial Sum ---
+# Σ n from 1..5 = 15 exactly.
+expected_sum = 15.0
+sum_result = partial_sum(a_identity, 5)
+assert_close(sum_result, expected_sum)
+print(f"Test 5 (Partial Sum): result = {sum_result}, expected = {expected_sum}")
+
+
+# --- TEST 6: Taylor Polynomial ---
+# For sin(x), Taylor P3 at x0=0 is x - x^3/6.
+x = sympy.Symbol("x")
+expected_poly = x - x**3/6
+poly_result = taylor_polynomial("sin(x)", x0=0, degree=3)
+assert sympy.simplify(poly_result - expected_poly) == 0
+print(f"Test 6 (Taylor P3): result = {poly_result}, expected = {expected_poly}")
+
+
+# --- TEST 7: Taylor Remainder ---
+# For exp(x) at x=1, R2(x) ≈ e/6 (Lagrange form approximation).
+expected_rem = sympy.E / 6
+rem_result = taylor_remainder_lagrange("exp(x)", x=1, x0=0, degree=2)
+# Moderate tolerance (symbolic remainder approximation)
+assert_close(float(rem_result), float(expected_rem), tol=1e-1)
+print(f"Test 7 (Taylor Remainder): result = {rem_result}, expected ≈ {expected_rem}")
+
+
+# --- TEST 8: Fourier Coefficients ---
+# For f(x)=1 on [-L, L]:  a0=2,  a_n=0,  b_n=0.
+a0, a_list, b_list = fourier_coefficients("1", L=sympy.pi, n_terms=3)
+assert_close(float(a0), 2.0)
+assert all(float(a) == 0 for a in a_list)
+assert all(float(b) == 0 for b in b_list)
+print(f"Test 8 (Fourier Coeffs): a0={a0}, a_n={a_list}, b_n={b_list}")
+
+
+# --- TEST 9: Fourier Partial Sum ---
+# For constant function 1, the Fourier partial sum satisfies S_n(x)=1.
+S9 = fourier_partial_sum("1", L=sympy.pi, n_terms=5)
+val_0 = float(S9.subs(x, 0))
+assert_close(val_0, 1.0)
+print(f"Test 9 (Fourier Partial Sum): S_n(0) = {val_0}, expected = 1.0")
+
+
+# --- TEST 10: Taylor Visualization ---
+# Only checks that the plotting function executes without error.
+plot_taylor_approximations("sin(x)", 0, degrees=(1,2,4), x_min=-2, x_max=2)
+print("Test 10 (Visualization): completed.")
+print("\nSeries function testing completed successfully.")

@@ -134,17 +134,17 @@ def leibniz_test(a_n: Callable[[int], float], check_terms: int = 50) -> bool:
 
         Returns:
             bool: True if the test conditions seem satisfied.
+        Improved Leibniz test:
+    - checks monotonicity only on the tail of the sequence
+    - allows initial non-monotonic behavior
     """
 
     values = [abs(a_n(n)) for n in range(1, check_terms + 1)]
-
-
-    if values[-1] > values[0]:
+    if values[-1] > 1e-6:
         return False
-
-
-    for i in range(1, len(values)):
-        if values[i] > values[i - 1]:
+    tail = values[check_terms // 2:]
+    for i in range(1, len(tail)):
+        if tail[i] > tail[i - 1]:
             return False
 
     return True
@@ -274,7 +274,11 @@ def fourier_coefficients(func_str: str, L: float, n_terms: int = 10):
         raise ValueError("n_terms must be >= 1.")
 
     symbolic_f, _ = parse_function(func_str)
-    x = list(symbolic_f.free_symbols)[0]
+    free = list(symbolic_f.free_symbols)
+    if free:
+        x = free[0]
+    else:
+        x = sp.Symbol("x")
 
     a0 = (1 / L) * sp.integrate(symbolic_f, (x, -L, L))
 
@@ -307,7 +311,11 @@ def fourier_partial_sum(func_str: str, L: float, n_terms: int = 10) -> sp.Expr:
 
     a0, a_list, b_list = fourier_coefficients(func_str, L, n_terms)
     symbolic_f, _ = parse_function(func_str)
-    x = list(symbolic_f.free_symbols)[0]
+    free = list(symbolic_f.free_symbols)
+    if free:
+        x = free[0]
+    else:
+        x = sp.Symbol("x")
 
     S = a0 / 2
 

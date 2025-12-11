@@ -6,7 +6,7 @@ from .limits_derivatives import visualize_limit
 from .limits_derivatives import symbolic_limit
 from .limits_derivatives import forward_difference
 
-
+from .series.series import *
 
 
 
