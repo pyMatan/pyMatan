@@ -40,31 +40,3 @@ def parse_function(func_str: str, variable: str = 'x') -> Tuple[sympy.Expr, Call
 
     return sympy_expr, np_func
 
-
-print("--- Testing parse_function ---")
-test_str = "2 * x**3 - cos(x) + pi"
-    
-try:
-    symbolic_f, numeric_f = parse_function(test_str)
-
-    print(f"\n✅ Input String: '{test_str}'")
-
-    print("\n[SymPy Expression]:")
-    print(f"  Type: {type(symbolic_f)}")
-    print(f"  Representation: {symbolic_f}")
-        
-    test_value = 1.0
-    result = numeric_f(test_value)
-        
-    expected = 2 * (1**3) - np.cos(1) + np.pi 
-        
-    print("\n[Numerical Function (NumPy)]:")
-    print(f"  Type: {type(numeric_f)}")
-    print(f"  f({test_value}) = {result:.6f}")
-    print(f"  Expected (NumPy): {expected:.6f}")
-        
-    assert np.isclose(result, expected), "Numerical calculation does not match expected value!"
-    print("\n✅ Numerical Calculation Test Passed.")
-        
-except ValueError as e:
-    print(f"\n❌ Critical Parsing Error: {e}")

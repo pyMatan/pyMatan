@@ -1,9 +1,9 @@
 import sympy
 from typing import Union
-from ..utils import parse_function
+from pyMatan.utils import parse_function
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Callable
+
 
 def numerical_limit(func, x0:float, side: str = "both", h:float = 1e-6):
     """
