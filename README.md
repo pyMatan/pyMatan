@@ -6,8 +6,8 @@
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)]()
 
 ## Developers
-Serhii Marynokha
-Konstantin Bachynskyi
+Serhii Marynokha,
+Konstantin Bachynskyi,
 Maksym Pugach
 ## License
 
