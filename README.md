@@ -34,7 +34,7 @@ The library is structured into three main modules, covering both **Numerical** (
 For this project phase, clone the repository and install the package in "editable" mode:
 
 ```bash
-git clone [Your Repository URL]
+git clone "https://github.com/pyMatan"
 cd pyMatan_project
 pip install -e .
 ```
