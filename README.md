@@ -1,14 +1,20 @@
 # pyMatan
-# pyMatan: Numerical and Symbolic Calculus Library
+## RGR work on subject of Special Programming Languages
+## pyMatan: Numerical and Symbolic Calculus Library
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)]()
 
-## License
+### Developers
+Serhii Marynokha,
+Konstantin Bachynskyi,
+Maksym Pugach
+### License
 
 This project is licensed under the **MIT License** - see the `LICENSE` file for details.
 
-## Project Overview
+### Project Overview
 
 `pyMatan` (Python Mathematical Analysis) is a versatile Python library designed to simplify the process of solving fundamental problems in mathematical analysis, including **limits, derivatives, integrals, and series**.
 
@@ -16,7 +22,7 @@ By strategically combining the high-performance numerical capabilities of **NumP
 
 This project was developed as a Computational Work (Розрахнукова Робота) for **[Your Course Name, e.g., Numerical Methods and Computational Analysis]** at **[Your University/Department]**.
 
-## Key Features
+### Key Features
 
 The library is structured into three main modules, covering both **Numerical** (Num) and **Symbolic** (Sym) analysis:
 
@@ -26,14 +32,14 @@ The library is structured into three main modules, covering both **Numerical** (
 | **`integrals`** | Numerical Quadrature, Adaptive Integration, and Symbolic Integration. | Trapezoidal, Simpson's, Midpoint, Gauss-Legendre, Adaptive Integration, Runge Error Estimation. | SymPy's `integrate`, Handling Improper Integrals. |
 | **`series`** | Convergence Tests, Taylor/Maclaurin Series, Fourier Series. | Calculation of Partial Sums, Visualization of Approximations. | D'Alembert, Cauchy, Integral Test, Alternating Series Test. |
 
-## Installation
+### Installation
 
-### Prerequisites
+#### Prerequisites
 
 * Python 3.8+
 * Required packages: `numpy`, `scipy`, `sympy`, `matplotlib`.
 
-### From Source
+#### From Source
 
 For this project phase, clone the repository and install the package in "editable" mode:
 
@@ -44,7 +50,7 @@ pip install -e .
 ```
 The `-e` flag allows you to run the package functions directly while still being able to edit the source code.
 
-## Usage Examples
+### Usage Examples
 
 1. Calculating Integrals (Kostiantyn)
 The IntegralSolver class (in integrals.py) provides a unified interface for both numerical and symbolic integration, error estimation, and convergence plotting.Example: Gauss-Legendre Quadrature and Symbolic VerificationGauss-Legendre is a high-precision method capable of integrating polynomials of degree $2n-1$ exactly, using only $n$ points. We verify the numerical result using SymPy's symbolic solver.
@@ -72,7 +78,7 @@ print(f"Exact Value (Symbolic): {exact_num}")
 # Expected Exact Value: 3.0
 ```
 
-3. Calculating a Numerical Limit (Serhii)
+2. Calculating a Numerical Limit (Serhii)
 Numerically estimate a limit by approaching the point from the right.
 This function is vital for verifying symbolic limits or handling functions where symbolic manipulation is complex.Example: The First Remarkable LimitCalculating the limit x->0 sin(x)/x.
 ```python
@@ -117,12 +123,12 @@ pyMatan_project/ <br>
 ├── README.md <br>
 └── LICENSE<br>
 
-## Contributors
+### Contributors
 
 This project was a collaborative effort by the following students:
 
 | Student | Module | Key Functions |
 | :--- | :--- | :--- |
-| **Kostiantyn** | `integrals` | Trapezoidal, Simpson, Gauss, Adaptive Integration, Runge Error. |
+| **Konstantyn** | `integrals` | Trapezoidal, Simpson, Gauss, Adaptive Integration, Runge Error. |
 | **Maksym** | `series` | D'Alembet, Cauchy, Integral Test, Taylor Polynomials, Fourier Series. |
 | **Serhii** | `limits_derivatives` | Numerical & Symbolic Limits/Derivatives, Project Setup, Testing. |
