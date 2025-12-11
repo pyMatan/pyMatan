@@ -77,7 +77,7 @@ print(f"Exact Value (Symbolic): {exact_num}")
 # Expected Exact Value: 3.0
 ```
 
-3. Calculating a Numerical Limit (Serhii)
+2. Calculating a Numerical Limit (Serhii)
 Numerically estimate a limit by approaching the point from the right.
 This function is vital for verifying symbolic limits or handling functions where symbolic manipulation is complex.Example: The First Remarkable LimitCalculating the limit x->0 sin(x)/x.
 ```python
