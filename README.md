@@ -1,9 +1,14 @@
 # pyMatan
 # pyMatan: Numerical and Symbolic Calculus Library
 
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)]()
 
+## Developers
+Serhii Marynokha
+Konstantin Bachynskyi
+Maksym Pugach
 ## License
 
 This project is licensed under the **MIT License** - see the `LICENSE` file for details.
