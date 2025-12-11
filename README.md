@@ -4,6 +4,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue)]()
 
+## License
+
+This project is licensed under the **MIT License** - see the `LICENSE` file for details.
+
 ## Project Overview
 
 `pyMatan` (Python Mathematical Analysis) is a versatile Python library designed to simplify the process of solving fundamental problems in mathematical analysis, including **limits, derivatives, integrals, and series**.
