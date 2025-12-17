@@ -90,7 +90,7 @@ def f(x):
 result = forward_difference(f, x0=3.0, h=1e-5)
 print(result)
 # → 6.000010000027034
-
+```
 ---
 # 3. `symbolic_derivative`
 
@@ -130,7 +130,7 @@ print(derivative)
 derivative_sin = symbolic_derivative("sin(x)", order=1)
 print(derivative_sin)
 # → cos(x)
-
+```
 ---
 # 4. `visualize_derivative`
 
@@ -168,7 +168,7 @@ from pyMatan.derivatives import visualize_derivative
 # Visualize the derivative of x^3 at x=1
 # This will show the blue curve, green tangent, and red secant lines.
 visualize_derivative("x**3", x0=1.0, h_step=1.0, h_approx=0.5)
-
+```
 ---
 # 5. `numerical_limit`
 
@@ -211,7 +211,7 @@ def f(x):
 res = numerical_limit(f, x0=1.0, side="both")
 print(res)
 # → 2.0
-
+```
 ---
 # 6. `symbolic_limit`
 
@@ -252,7 +252,7 @@ print(res)
 inf_res = symbolic_limit("1/x", x0="oo")
 print(inf_res)
 # → 0
-
+```
 ---
 # 7. `visualize_limit`
 
@@ -291,3 +291,4 @@ from pyMatan.limits import visualize_limit
 # Visualize the behavior of f(x) = (x^2 - 1)/(x - 1) near x = 1
 # Even though the function is undefined at 1, the limit is visible.
 visualize_limit("(x**2 - 1)/(x - 1)", x0=1.0, h_window=2.0)
+```
