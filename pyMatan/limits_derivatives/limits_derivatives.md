@@ -47,6 +47,7 @@ from pyMatan.derivatives import central_difference
 def f(x): return x**2
 central_difference(f, x0=2.0, order=1)
 # → 4.0 (approx)
+```
 ---
 
 # 2. `forward_difference`
