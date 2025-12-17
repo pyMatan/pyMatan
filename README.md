@@ -113,7 +113,7 @@ pyMatan_project/
 │   │   ├── __init__.py
 │   │   ├── integrals.py            
 │   │   └── integrals.md
-|           
+|   |        
 │   ├── series/                     
 │   │   ├── __init__.py
 │   │   ├── series.py               
