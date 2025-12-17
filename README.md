@@ -103,26 +103,38 @@ print(f"Numerical limit of f(x) as x -> 0+ is: {limit_value}")
 Project Structure
 The project adheres to the standard Python package structure, ensuring clean separation of concerns and clear responsibilities for each module.
 
-pyMatan_project/ <br>
-├── pyMatan/  <br>
-│   ├── integrals/ <br>           
-│   │   ├── __init__.py <br>
-│   │   └── integrals.py <br>
-│   ├── series/ <br>
-│   │   ├── __init__.py <br>
-│   │   └── series.py <br>
-│   ├── limits_derivatives/ <br>
-│   │   ├── __init__.py <br>
-│   │   ├── limits.py <br>
-│   │   └── derivatives.py <br>
-│   
-├── setup.py <br>              
-├── testing <br>
-|   ├──notebook_example.ipynb <br>
-|   ├──test_pyMatan.py <br>
-├── README.md <br>
-└── LICENSE<br>
-
+```text
+pyMatan_project/
+│
+├── pyMatan/                        
+│   ├── __init__.py                  
+│   │
+│   ├── integrals/                  
+│   │   ├── __init__.py
+│   │   ├── integrals.py            
+│   │   └── integrals.md
+|           
+│   ├── series/                     
+│   │   ├── __init__.py
+│   │   ├── series.py               
+│   │   └── series.md               
+│   │
+│   ├── limits_derivatives/          
+│   │   ├── __init__.py
+│   │   ├── limits.py                
+│   │   ├── derivatives.py           
+│   │   └── limits_derivatives.md    
+│   │
+│   └── utils.py                    
+│
+├── setup.py                         
+├── LICENSE                         
+├── README.md                        
+│
+└── testing/                        
+    ├── test_pyMatan.py             
+    └── notebook_example.ipynb       
+```
 ### Contributors
 
 This project was a collaborative effort by the following students:
