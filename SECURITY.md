@@ -5,7 +5,7 @@
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 1.0.x   | :white_check_mark: |
+| 0.1.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
 [pyMatan@gmail.com]
