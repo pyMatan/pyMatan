@@ -8,4 +8,4 @@
 | 1.0.x   | :white_check_mark: |
 
 ## Reporting a Vulnerability
-[gmail](pyMatan@gmail.com)
+[gmail][pyMatan@gmail.com]
